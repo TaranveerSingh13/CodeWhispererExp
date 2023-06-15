@@ -26,7 +26,11 @@ public class WeatherForecastController {
         return "home";
     }
 
-    //
+    /**
+     * @param model Model
+     * @param location String
+     * @return page String
+     */
     @PostMapping("weather/local")
     public String getWeatherFromOpenApi(Model model, @RequestParam(name="location") String location) {
       Weather weather = this.weatherService.getWeather(location);
